@@ -1,0 +1,33 @@
+tamper scripts like --tamper=charencode, --tamper=space2comment, and --tamper=randomcase are common when hackers want to evade detection by WAFs (Web Application Firewalls). These are essential for stealth operations.
+
+--union-cols and --sql-query are crucial for fine-tuning attacks when the hacker needs specific results from the database, such as usernames, passwords, or other sensitive data.
+
+--proxy, --tor, and --user-agent are used frequently by hackers trying to hide their identity or avoid IP blacklisting.
+
+--current-user, --current-db, and --is-dba are often used in combination to escalate privileges once an attacker gains initial access. A real attacker will try to get as much info as possible without dumping everything.
+
+Real-world attacks often combine sqlmap with other tools (like Burp Suite, nmap, or custom scripts) to maximize efficiency and avoid detection. For example:
+
+Use nmap for service enumeration.
+
+Then use sqlmap to exploit known vulnerabilities.
+
+Finally, combine with Burp Suite for deeper analysis and data exfiltration.
+
+Common Tools in Real Attacks:
+Real attackers, whether ethical or malicious, don’t just rely on sqlmap. Here’s a toolkit they might use:
+
+nmap (for scanning and service enumeration)
+
+Burp Suite (for intercepting requests, manual testing)
+
+Metasploit (for further exploits once a vulnerability is found)
+
+Hydra or Medusa (for brute-force)
+
+Nikto or OWASP ZAP (for vulnerability scanning)
+
+Custom scripts (tailored to specific targets)
+
+Important Reminder:
+Using sqlmap illegally (without permission) is against the law. Ethical hackers only use sqlmap in authorized environments like bug bounty programs or penetration tests.
