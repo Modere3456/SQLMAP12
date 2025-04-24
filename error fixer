@@ -1,0 +1,38 @@
+🧪 If it still closes unexpectedly:
+Here’s how you can see the error before it disappears:
+
+Instead of just:
+
+cmd
+Copy
+Edit
+python sqlmap.py -u "http://example.com/vuln.php?id=1" --dbs
+Try:
+
+cmd
+Copy
+Edit
+python sqlmap.py -u "http://example.com/vuln.php?id=1" --dbs
+pause
+The pause command forces the terminal to wait for you to press a key — so you can see any error messages before the window closes.
+
+📦 Also check:
+Do you have Python installed? Run:
+
+cmd
+Copy
+Edit
+python --version
+If you get an error, that’s the root of the problem.
+
+If sqlmap came in a .zip file, make sure it's fully extracted, not running from inside the zip.
+
+Let me know what happens when you run python sqlmap.py -h — whether it shows help text or crashes. That’ll help pinpoint it fast.
+
+
+
+
+
+
+
+
